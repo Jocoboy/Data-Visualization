@@ -19,7 +19,20 @@ Enter 'ctrl+F' to search keyword 'cid'.
 
 ## Statistics 
 
-### Normal Distribution
+### Continuous Distribution
+
+#### Normal Distribution
+
+Cumulative Distribution Function
+<img src="statistics/nd_cdf.gif" style="width: 100%;" align="center" />
+
+Probability Density Function 
+<img src="statistics/nd_pdf.gif" style="width: 100%;" align="center" />
+
+Parameters:
+- μ : mean of Normal Distribution —— its modification will lead to curve's horizontal shift
+- σ : standard deviation of Normal Distribution —— the smaller it is, the more concentrated Normal Distribution will be (the curve will be higher and slimmer).
+- σ² : variance of Normal Distribution
 
 <img src="statistics/histogram0-1-1000.png" style="width: 100%;" align="center" />
 <img src="statistics/histogram0-2-1000.png" style="width: 100%;" align="center" />
