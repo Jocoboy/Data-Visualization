@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.mlab as mlab
 import matplotlib.pyplot as plt
-from scipy.stats import norm
 
 
 def show_histogram(__lamda__, __k__):
@@ -14,7 +13,7 @@ def show_histogram(__lamda__, __k__):
     plt.ylabel('Probability')
     plt.title('Histogram of Possion Distribution: $\lambda$ = '+str(lamda))
     plt.subplots_adjust(left=0.15)
-    plt.savefig('histogram'+str(lamda)+'-' + str(k) + '.png')
+    # plt.savefig('P'+'-'+str(lamda)+'-' + str(k) + '.png')
     plt.show()
 
 
@@ -41,8 +40,8 @@ def show_histogram_with_fitting_curve(__lamda__, __k__):
     If b is None and len(kwargs)==0, toggle the grid state.
     '''
     plt.grid()
-    plt.savefig('histogram_with_fitting_curve' +
-                str(lamda)+'-' + str(k) + '.png')
+    # plt.savefig('P_C'+'-' +
+    #            str(lamda)+'-' + str(k) + '.png')
     plt.show()
 
 

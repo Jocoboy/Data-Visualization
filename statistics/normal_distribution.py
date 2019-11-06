@@ -41,7 +41,7 @@ def show_histogram(__mu__=0, __sigma__=1, __sampleNo__=1000):
     plt.title('Histogram of Normal Distribution: $\mu$ = ' +
               str(mu) + ', $\sigma$ = '+str(sigma))
     '''Display a figure.'''
-    # plt.savefig('histogram'+str(mu) +
+    # plt.savefig('N'+'-'+str(mu) +
     #            '-'+str(sigma)+'-'+str(sampleNo)+'.png')
     plt.show()
 
@@ -78,7 +78,7 @@ def show_histogram_with_fitting_curve(__mu__=0, __sigma__=1, __sampleNo__=1000):
     '''Tune the subplot layout.'''
     plt.subplots_adjust(left=0.15)
     '''Display a figure.'''
-    # plt.savefig('histogram_with_fitting_curve'+str(mu) +
+    # plt.savefig('N_C'+'-'+str(mu) +
     #            '-'+str(sigma)+'-'+str(sampleNo)+'.png')
     plt.show()
 
