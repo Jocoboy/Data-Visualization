@@ -21,18 +21,25 @@ Enter 'ctrl+F' to search keyword 'cid'.
 
 ### Discrete Distribution
 
+#### Binomial Distribution
+
+**Probability Mass Function**
+<img src="statistics/bd_pmf.gif" style="width: 100%;" align="center" />
+
+<img src="statistics/B_C-10-0.5.png" style="width: 100%;" align="center" />
+
 #### Possion Distribution
 
 **Probability Mass Function**
-<img src="statistics/pd_pdf.png" style="width: 100%;" align="center" />
+<img src="statistics/pd_pmf.gif" style="width: 100%;" align="center" />
 
 For events with an expected separation λ the Poisson distribution f(k; λ) describes the probability of k events occurring within the observed interval λ.
 
-<img src="statistics/histogram1-1000.png" style="width: 100%;" align="center" />
-<img src="statistics/histogram5-1000.png" style="width: 100%;" align="center" />
-<img src="statistics/histogram10-1000.png" style="width: 100%;" align="center" />
+<img src="statistics/P-1-1000.png" style="width: 100%;" align="center" />
+<img src="statistics/P-5-1000.png" style="width: 100%;" align="center" />
+<img src="statistics/P-10-1000.png" style="width: 100%;" align="center" />
 
-<img src="statistics/histogram_with_fitting_curve5-10000.png" style="width: 100%;" align="center" />
+<img src="statistics/P_C-5-10000.png" style="width: 100%;" align="center" />
 
 ### Continuous Distribution
 
@@ -49,9 +56,19 @@ For events with an expected separation λ the Poisson distribution f(k; λ) desc
 - **σ** : standard deviation of Normal Distribution —— the smaller it is, the more concentrated Normal Distribution will be (the curve will be higher and slimmer).
 - **σ²** : variance of Normal Distribution
 
-<img src="statistics/histogram0-1-1000.png" style="width: 100%;" align="center" />
-<img src="statistics/histogram0-2-1000.png" style="width: 100%;" align="center" />
-<img src="statistics/histogram1-1-1000.png" style="width: 100%;" align="center" />
-<img src="statistics/histogram2-1-1000.png" style="width: 100%;" align="center" />
+<img src="statistics/N-0-1-1000.png" style="width: 100%;" align="center" />
+<img src="statistics/N-0-2-1000.png" style="width: 100%;" align="center" />
+<img src="statistics/N-1-1-1000.png" style="width: 100%;" align="center" />
+<img src="statistics/N-2-1-1000.png" style="width: 100%;" align="center" />
 
-<img src="statistics/histogram_with_fitting_curve0-1-1000000.png" style="width: 100%;" align="center" />
+<img src="statistics/N_C-0-1-1000000.png" style="width: 100%;" align="center" />
+
+#### Exponential Distribution
+
+**Probability Density Function**
+<img src="statistics/ed_pdf.gif" style="width: 100%;" align="center" />
+
+**Cumulative Distribution Function**
+<img src="statistics/ed_cdf.gif" style="width: 100%;" align="center" />
+
+<img src="statistics/E_C-0.125.png" style="width: 100%;" align="center" />
