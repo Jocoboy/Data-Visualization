@@ -19,6 +19,8 @@ Enter 'ctrl+F' to search keyword 'cid'.
 
 ## Geo－Information 
 
+## Example
+
 <img src="geo-info/local_map-1.png" style="width: 100%;" align="center" />
 <img src="geo-info/local_map-2.png" style="width: 100%;" align="center" />
 
