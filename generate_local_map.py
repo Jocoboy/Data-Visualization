@@ -4,6 +4,7 @@ import pandas as pd
 import os
 import geoip2.database
 import settings
+import main_window
 
 import webbrowser
 
@@ -43,6 +44,9 @@ def get_location(ip):
 
 
 def main():
+
+    window = main_window.MainWindow()
+
     local_map = folium.Map(location=get_location(
         settings.IP), zoom_start=13, tiles='Stamen Toner')
     local_map.save('local_map.html')
