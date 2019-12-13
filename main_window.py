@@ -19,9 +19,9 @@ class MainWindow:
         settings.MAP_TYPE = self.var_map_type.get()
 
     def __btn_show_msg_click(self):
-        self.edit_text.delete('1.0', 'end')
+        #self.edit_text.delete('1.0', 'end')
         self.__get_inner_info()
-        Configuration().insert_info(self.edit_text)
+        Configuration().insert_info(self.var_infos)
 
     def __btn_web_browser(self):
         self.__get_inner_info()
@@ -74,10 +74,22 @@ class MainWindow:
 
         self.edit_text = tk.Text(window, font=font_style)
         #self.edit_text = tk.Text(window)
-        self.edit_text.grid(row=4, column=0, rowspan=1, columnspan=3,
-                            pady=30, ipady=30)
+        #self.edit_text.grid(row=4, column=0, rowspan=1, columnspan=3,
+        #                    pady=30, ipady=30)
         # scroll_y = Scrollbar(window,command=self.edit_text.yview)
         # self.edit_text.configure(yscrollcommand=scroll_y.set)
+        self.label_list = []
+        self.var_infos = []
+            
+        for i in range(4,15):
+            self.var_str = tk.StringVar()
+            self.var_infos.append(self.var_str)
+            self.label = tk.Label(window,text="",textvariable=self.var_str)
+            self.label.grid(row=i,column=0,columnspan=3)
+            self.label_list.append(self.label)
+
+            
+            
 
         #font_style = Font(name='Times New Roman', size=11, italic=False, color='FF000000', bold=False)
         box_map_type = ttk.Combobox(
@@ -97,6 +109,6 @@ class MainWindow:
         image_file_foot = tk.PhotoImage(file='images/canvas_foot.png')
         image_foot = canvas_foot.create_image(
             0, 0, anchor='nw', image=image_file_foot)
-        canvas_foot.grid(row=5, column=0, columnspan=3)
+        canvas_foot.grid(row=15, column=0, columnspan=3)
 
         window.mainloop()
