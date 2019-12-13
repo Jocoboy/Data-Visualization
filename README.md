@@ -5,10 +5,11 @@ A Light system to query map infomation base on IP, yet to be advised.
 ## :mag:Preview
 
 ### Main Window
+
 <img src="preview.png" style="width: 100%;" align="center" />
 
 ### Map in Web Browser
-### Main Window
+
 <img src="local_map-1.png" style="width: 100%;" align="center" />
 <img src="local_map-2.png" style="width: 100%;" align="center" />
 
