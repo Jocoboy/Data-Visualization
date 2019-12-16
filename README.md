@@ -1,6 +1,6 @@
 # Geographic Information System (GIS)
 
-A Light system to query map infomation base on IP, yet to be advised.
+A light system to query map infomation based on IP, yet to be advised.
 
 ## :mag:Preview
 
