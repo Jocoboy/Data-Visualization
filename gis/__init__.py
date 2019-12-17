@@ -8,6 +8,9 @@ import geoip2.database
 from geoip2.errors import AddressNotFoundError
 import folium
 import webbrowser
+import plotly.graph_objs as go
+from plotly.offline.offline import plot
+import tkinter.messagebox
 
 '''
 main_window.py
@@ -18,4 +21,4 @@ import tkinter.font as tf
 
 
 
-__version__ = '1.0'
+__version__ = '1.1'

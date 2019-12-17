@@ -17,6 +17,7 @@ class MainWindow:
         settings.IP = self.var_ip.get()
         settings.MEDIA_ROOT = self.var_media_root.get()
         settings.MAP_TYPE = self.var_map_type.get()
+        settings.API_KEY = self.var_api_key.get()
 
     def __btn_show_msg_click(self):
         #self.edit_text.delete('1.0', 'end')
@@ -39,11 +40,17 @@ class MainWindow:
         self.var_media_root.set(settings.MEDIA_ROOT)
         self.var_map_type = tk.StringVar()
         self.var_map_type.set(settings.MAP_TYPE)
+        '''
+        Plugin here.
+        '''
+        self.var_api_key = tk.StringVar()
+        self.var_api_key.set(settings.API_KEY)
+
 
         # Cofigure some basic information for the main window.
         window.title("Geographic Information System")
         window.geometry("%sx%s" % (width, height))
-        window.resizable(width=True, height=True)
+        window.resizable(width=False, height=False)
 
         # Let the window to be displayed in the center of screen.
         x = int((window.winfo_screenwidth()-width)/2)
@@ -65,10 +72,24 @@ class MainWindow:
             row=1, column=0, pady=5)
         tk.Label(window, text="Input your IP:").grid(
             row=2, column=0, pady=5)
+        '''
+        Plugin here.
+        '''
+        tk.Label(window,text="Input yout API_KEY:").grid(
+            row=3,column=0,pady=5
+        )
+
         tk.Entry(window, textvariable=self.var_media_root).grid(
             row=1, column=1, columnspan=2, sticky='w'+'e', padx=30)
         tk.Entry(window, textvariable=self.var_ip).grid(
             row=2, column=1, columnspan=1, sticky='w'+'e', padx=30)
+        '''
+        Plugin here.
+        '''
+        tk.Entry(window,textvariable=self.var_api_key,show='*').grid(
+            row=3,column=1,columnspan=1,sticky='w'+'e',padx=30
+        )
+
 
         font_style = tf.Font(family="Times", size=10, weight=tf.BOLD)
 
@@ -81,13 +102,16 @@ class MainWindow:
         self.label_list = []
         self.var_infos = []
             
-        for i in range(4,15):
+        for i in range(5,14):
             self.var_str = tk.StringVar()
             self.var_infos.append(self.var_str)
             self.label = tk.Label(window,text="",textvariable=self.var_str)
-            self.label.grid(row=i,column=0,columnspan=3)
+            # if i == 13:
+            #     self.label.grid(row=i,column=0,columnspan=3,pady=8)
+            # else:
+            self.label.grid(row=i,column=0,columnspan=3,pady=1)
             self.label_list.append(self.label)
-
+        
             
             
 
@@ -95,14 +119,17 @@ class MainWindow:
         box_map_type = ttk.Combobox(
             window, text="Select map type", textvariable=self.var_map_type, state='readonly')
         box_map_type['values'] = ('OpenStreetMap', 'Stamen Terrain', 'Stamen Toner', 'Stamen Watercolor', 'CartoDB positron',
-                                  'CartoDB dark_matter', 'Mapbox Bright', 'Mapbox Control Room')  # ,'Cloudmade','Mapbox')
+                                  'CartoDB dark_matter', 'Mapbox Bright', 'Mapbox Control Room'
+                                  ,'Cloudmade','Mapbox','custom tileset')
         box_map_type.grid(row=2, column=2, columnspan=1)
         btn_web_browser = tk.Button(window, command=self.__btn_web_browser, text="Open in web browser", height=1,
                                     borderwidth=0, cursor='target', bg='#D3D3D3', activeforeground='#A9A9A9')
         btn_web_browser.grid(row=3, column=2, columnspan=1)
         btn_show_msg = tk.Button(window, command=self.__btn_show_msg_click, text="Show geographic information",
                                  height=1, borderwidth=0, cursor='heart', bg='#D3D3D3', activeforeground='#A9A9A9')
-        btn_show_msg.grid(row=3, column=1, columnspan=1)
+        btn_show_msg.grid(row=4, column=1, columnspan=1)
+
+      
 
         canvas_foot = tk.Canvas(window, width=width,
                                 height=height/3/4, bg='white')
