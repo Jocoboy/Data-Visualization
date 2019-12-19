@@ -1,0 +1,18 @@
+language: python
+python:
+  - "3.7"
+
+install:
+  - pip install folium
+  - pip install geoip2
+  - pip install plotly
+
+before_script:
+  - export MPLBACKEND=Agg
+
+script:
+  - MPLBACKEND=Agg python main.py
+
+branches:
+  only:
+    - GIS
