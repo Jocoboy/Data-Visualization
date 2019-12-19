@@ -1,6 +1,6 @@
 # Geographic Information System (GIS)
 
-A light system to query map infomation based on IP, yet to be advised.
+A light system to query map information based on IP, yet to be advised.
 
 ## :mag:Preview
 
@@ -20,7 +20,7 @@ A light system to query map infomation based on IP, yet to be advised.
     pip install geoip2
     pip install plotly
     ```
-    For demestic user, please use pypi mirror ```pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package``` instead.
+    For domestic user, please use pypi mirror ```pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package``` instead.
 - MaxMind DataBase [GeoLite2-City](https://dev.maxmind.com/geoip/geoip2/geolite2/)
 
 ## :pencil:Usage
