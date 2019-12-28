@@ -42,6 +42,14 @@ A light system to query map information based on IP, yet to be advised.
         ```
         at ``Configuration.get_local_map()`` in ``configurations.py``.
 
+## :fish:History Version&&New Feature    
+
+- v1.0, basic functions implemented, including offline query based on IP and major built-in tilesets preview(offline).
+
+- v1.1, based on the current functions, new features added, including online query(Mapbox&Cloudmade) through API_KEY and custom tileset preview(online).
+
+- v1.2, based on the current functions, new features added, including photos and descriptions of 34 provincial capitals of China and 15 cities abroad.
+
 ## :octocat:Contributors
 
 [@Jocoboy](https://github.com/Jocoboy)
