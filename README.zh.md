@@ -6,7 +6,7 @@
 
 ### 主界面
 
-<img src="preview2.0.png" style="width: 100%;" align="center" />
+<img src="preview3.0.png" style="width: 100%;" align="center" />
 
 ### 演示
 

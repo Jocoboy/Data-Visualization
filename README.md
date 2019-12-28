@@ -6,7 +6,7 @@ A light system to query map information based on IP, yet to be advised.
 
 ### Main Window
 
-<img src="preview2.0.png" style="width: 100%;" align="center" />
+<img src="preview3.0.png" style="width: 100%;" align="center" />
 
 ### Map in Web Browser
 
