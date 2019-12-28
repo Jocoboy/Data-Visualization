@@ -5,12 +5,66 @@ import folium
 import webbrowser
 import plotly.graph_objs as go
 from plotly.offline.offline import plot
+import tkinter as tk
 
 import settings
 import tkinter.messagebox
+# from main_window import MainWindow
 
 
 class Configuration:
+
+    path = {
+        # City in China
+        'Anhui':'an_hui',
+        'Aomen':'ao_men',
+        'Beijing':'bei_jing',
+        'Chongqing':'chong_qing',
+        'Fujian':'fu_jian',
+        'Gansu':'gan_su',
+        'Guangdong':'guang_dong',
+        'Guangxi':'guang_xi',
+        'Guizhou':'gui_zhou',
+        'Hainan':'hai_nan',
+        'Hebei':'he_bei',
+        'Henan':'he_nan',
+        'Heilongjiang':'hei_long_jiang',
+        'Hubei':'hu_bei',
+        'Hunan':'hu_nan',
+        'Jilin':'ji_lin',
+        'Jiangsu':'jiang_su',
+        'Jiangxi':'jiang_xi',
+        'Liaoning':'liao_ning',
+        'Neimenggu':'nei_meng_gu',
+        'Ningxia':'ning_xia',
+        'Qinghai':'qing_hai',
+        'Shandong':'shan_dong',
+        'Sichuan':'si_chuan',
+        'Taiwan':'tai_wan',
+        'Tianjing':'tian_jing',
+        'Xizang':'xi_zang',
+        'Xianggang':'xiang_gang',
+        'Xinjiang':'xin_jiang',
+        'Yunnan':'yun_nan',
+        'Zhejiang':'zhe_jiang',
+        # City in other country
+        'America':'America',
+        'Australia':'Australia',
+        'Brazil':'Brazil',
+        'Canada':'Canada',
+        'England':'England',
+        'Finland':'Finland',
+        'France':'France',
+        'Germany':'Germany',
+        'India':'India',
+        'Mexico':'Mexico',
+        'Mongolia':'Mongolia',
+        'Russia':'Russia',
+        'Saudi Arabia':'Saudi Arabia',
+        'Singapore':'Singapore',
+        'The Philippines':'The Philippines'
+    }
+
 
     def __init__(self):
         pass
@@ -81,7 +135,7 @@ class Configuration:
             webbrowser.open('local_map.html')
             print("Successfully open!")
 
-    def insert_info(self, var_infos):
+    def insert_info(self, var_infos):#,label_left,label_right):
 
         response = self.__get_response()
         if response is None:
@@ -128,3 +182,29 @@ class Configuration:
             response.location.time_zone))
 
         var_infos[7].set("Postal code: {}".format(response.postal.code))
+
+
+        
+        '''
+        Addons here.
+        '''
+        try:
+           
+            m_name = self.path[response.subdivisions.most_specific.name]
+            print(m_name)
+            
+        except KeyError:
+            # MainWindow.photo_left = tk.PhotoImage(file='city_scenery/error.png')
+            m_name = 'error'
+            print('photo_left error')
+        else:
+            # MainWindow.photo_left = tk.PhotoImage(file='city_scenery/'+
+            #                           self.path[response.subdivisions.most_specific.name]+'.png')
+            print('photo_left found')
+
+        return m_name
+
+        # MainWindow.label_left = tk.Label(image=MainWindow.photo_left).grid(row=6,column=0,rowspan=8,columnspan=1)
+        
+        # photo_right = tk.PhotoImage(file='city_description/'+
+        #             self.path[response.subdivisions.most_specific.name]+'.png')

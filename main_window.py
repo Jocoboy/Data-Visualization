@@ -13,21 +13,6 @@ class MainWindow:
     __height = 600
     __root = tk.Tk()
 
-    def __get_inner_info(self):
-        settings.IP = self.var_ip.get()
-        settings.MEDIA_ROOT = self.var_media_root.get()
-        settings.MAP_TYPE = self.var_map_type.get()
-        settings.API_KEY = self.var_api_key.get()
-
-    def __btn_show_msg_click(self):
-        #self.edit_text.delete('1.0', 'end')
-        self.__get_inner_info()
-        Configuration().insert_info(self.var_infos)
-
-    def __btn_web_browser(self):
-        self.__get_inner_info()
-        Configuration().get_local_map()
-
     def __init__(self):
 
         window = self.__root
@@ -50,7 +35,7 @@ class MainWindow:
         # Cofigure some basic information for the main window.
         window.title("Geographic Information System")
         window.geometry("%sx%s" % (width, height))
-        window.resizable(width=False, height=False)
+        window.resizable(width=True, height=True)
 
         # Let the window to be displayed in the center of screen.
         x = int((window.winfo_screenwidth()-width)/2)
@@ -102,6 +87,39 @@ class MainWindow:
         self.label_list = []
         self.var_infos = []
             
+        
+        '''
+        Addons here.
+        '''
+        photo_left = tk.PhotoImage(file='blank.png')
+        self.label_left = tk.Label(image=photo_left)
+        self.label_left.grid(row=6,column=0,rowspan=8,columnspan=1)
+       
+
+        # photo_left = tk.PhotoImage(file='city_scenery/zhe_jiang.png')
+        # label_left = tk.Label(image=photo_left).grid(row=6,column=0,rowspan=8,columnspan=1)
+        print(self.label_left)
+
+        '''
+        Addons here.
+        '''
+        photo_right = tk.PhotoImage(file='blank.png')
+        self.label_right = tk.Label(image=photo_right)
+        self.label_right.grid(row=6,column=2,rowspan=8,columnspan=1)
+        print(self.label_right)
+        # '''
+        # Addons here.
+        # '''
+        # photo_left = tk.PhotoImage(file='city_scenery/bei_jing.png')
+        # self.label_left = tk.Label(image=photo_left).grid(row=6,column=0,rowspan=8,columnspan=1)
+        # print(self.label_left)
+
+        # '''
+        # Addons here.
+        # '''
+        # photo_right = tk.PhotoImage(file='city_scenery/bei_jing.png')
+        # self.label_right = tk.Label(image=photo_right).grid(row=6,column=2,rowspan=8,columnspan=1)
+
         for i in range(5,14):
             self.var_str = tk.StringVar()
             self.var_infos.append(self.var_str)
@@ -138,4 +156,39 @@ class MainWindow:
             0, 0, anchor='nw', image=image_file_foot)
         canvas_foot.grid(row=15, column=0, columnspan=3)
 
+
         window.mainloop()
+
+
+        
+
+    def __get_inner_info(self):
+        settings.IP = self.var_ip.get()
+        settings.MEDIA_ROOT = self.var_media_root.get()
+        settings.MAP_TYPE = self.var_map_type.get()
+        settings.API_KEY = self.var_api_key.get()
+
+    def __btn_show_msg_click(self):
+        #self.edit_text.delete('1.0', 'end')
+        self.__get_inner_info()
+        city_name = Configuration().insert_info(self.var_infos)
+        photo_left = tk.PhotoImage(file='city_scenery/'+city_name+'.png')
+        print('city_scenery/'+city_name+'.png')
+        # if self.label_left:
+        self.label_left.configure(image=photo_left)
+        self.label_left.image = photo_left
+        # self.label_left = tk.Label(image=photo_left)
+        # self.label_left.grid(row=6,column=0,rowspan=8,columnspan=1)
+            # print(1)
+        # else:
+            # print(2)
+        # label_left = tk.Label(image=photo_left).grid(row=6,column=0,rowspan=8,columnspan=1)
+        photo_right = tk.PhotoImage(file='city_description/'+city_name+'.png')
+        self.label_right.configure(image=photo_right)
+        self.label_right.image = photo_right
+
+    def __btn_web_browser(self):
+        self.__get_inner_info()
+        Configuration().get_local_map()
+
+   

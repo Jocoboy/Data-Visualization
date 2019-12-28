@@ -11,6 +11,7 @@ import webbrowser
 import plotly.graph_objs as go
 from plotly.offline.offline import plot
 import tkinter.messagebox
+import tkinter as tk
 
 '''
 main_window.py
@@ -21,4 +22,4 @@ import tkinter.font as tf
 
 
 
-__version__ = '1.1'
+__version__ = '1.2'
